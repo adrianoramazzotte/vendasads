@@ -35,6 +35,7 @@ public class Usuario implements Serializable{
 	@ElementCollection(fetch=FetchType.EAGER)
 	@CollectionTable(name="PERFIL") 
 	private Set<Integer> perfis = new HashSet<>();
+	
 	public Usuario() {
 		addPerfil(Perfil.FUNCIONARIO);	
 	}
@@ -49,12 +50,12 @@ public class Usuario implements Serializable{
 	}
 
 	public Usuario(Integer id, @NotEmpty(message = "Preenchimento Obrigatório") String login,
-			@NotEmpty(message = "Preenchimento Obrigatório") String senha, Set<Integer> perfis) {
+			@NotEmpty(message = "Preenchimento Obrigatório") String senha) {
 		super();
 		this.id = id;
 		this.login = login;
 		this.senha = senha;
-		this.perfis = perfis;
+		
 	}
 
 	public Integer getId() {
@@ -65,11 +66,11 @@ public class Usuario implements Serializable{
 		this.id = id;
 	}
 
-	public String getEmail() {
+	public String getLogin() {
 		return login;
 	}
 
-	public void setEmail(String login) {
+	public void setLogin(String login) {
 		this.login = login;
 	}
 
@@ -125,6 +126,7 @@ public class Usuario implements Serializable{
 		return builder.toString();
 	}
 
+	
 	
 
 }

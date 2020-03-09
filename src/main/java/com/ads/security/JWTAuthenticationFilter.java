@@ -46,7 +46,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 	                .readValue(req.getInputStream(), CredenciaisDTO.class);
 	        //cria um UsernamePasswordAuthenticationToken com as credenciais recuperadas
 	        UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(creds.getLogin(), creds.getSenha(), new ArrayList<>());
-	        System.out.println(authToken.toString());
+	       
 	        // o SS verifica se usuario e senha são válidos
 	        Authentication auth = authenticationManager.authenticate(authToken);
 	        return auth;
