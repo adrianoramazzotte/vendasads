@@ -26,9 +26,11 @@ public class Usuario implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
+
 	@NotEmpty(message="Preenchimento Obrigatório")
 	@Column(unique=true)
 	private String login;
+	@JsonIgnore
 	@NotEmpty(message="Preenchimento Obrigatório")
 	private String senha;
 	@JsonIgnore

@@ -39,14 +39,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private JWTUtil jwtUtil;
 
 	private static final String[] PUBLIC_MATCHERS = { 
-			"/categorias/**" 
+			"/clientes/**" 
 			 };
 
 	private static final String[] PUBLIC_MATCHERS_GET = {
-			"/clientes/**", "/categorias/**"
+			"/clientes/**"
 	};
 	
-	private static final String[] PUBLIC_MATCHERS_PUT = {"/categorias/**", "/auth/forgot/**" };
+	private static final String[] PUBLIC_MATCHERS_PUT = {"/cliente/**", "/auth/forgot/**" };
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
